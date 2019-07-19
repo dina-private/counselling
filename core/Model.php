@@ -11,24 +11,16 @@ class Model
     /**
      * @var resource
      */
-    private $connection;
+    private $DBConnection;
 
     /**
      * Model constructor.
+     *
+     * @param DBConnection $DBConnection
      */
-    public function __construct()
+    public function __construct(DBConnection $DBConnection)
     {
-        global $config;
-        $this->connection = mysqli_connect(
-            $config['db_host'],
-            $config['db_username'],
-            $config['db_password'],
-            $config['db_password']
-        );
-
-        if (!$this->connection) {
-            die('MySQL Error: ' . mysqli_connect_error());
-        }
+        $this->DBConnection = $DBConnection->getDBConnection();
     }
 
     /**
@@ -42,7 +34,7 @@ class Model
      */
     public function escapeString($string)
     {
-        return mysqli_real_escape_string($this->connection, $string);
+        return mysqli_real_escape_string($this->DBConnection, $string);
     }
 
     /**
@@ -96,6 +88,6 @@ class Model
      */
     public function executeQuery($query)
     {
-        return mysqli_query($this->connection, $query);
+        return mysqli_query($this->DBConnection, $query);
     }
 }

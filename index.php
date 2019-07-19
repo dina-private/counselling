@@ -12,6 +12,7 @@ require ROOT_DIR . CORE_FOLDER . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPA
 require ROOT_DIR . CORE_FOLDER . DIRECTORY_SEPARATOR . 'Model.php';
 require ROOT_DIR . CORE_FOLDER . DIRECTORY_SEPARATOR . 'View.php';
 require ROOT_DIR . CORE_FOLDER . DIRECTORY_SEPARATOR . 'Controller.php';
+require ROOT_DIR . CORE_FOLDER . DIRECTORY_SEPARATOR . 'DBConnection.php';
 require ROOT_DIR . CORE_FOLDER . DIRECTORY_SEPARATOR . 'App.php';
 
 (new App())->start();

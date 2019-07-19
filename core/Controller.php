@@ -7,6 +7,17 @@
  */
 class Controller
 {
+    private $app = null;
+    private $DBConnection = null;
+
+    public function __construct(App $app = null)
+    {
+        $this->app = $app;
+        if ($this->app) {
+            $this->DBConnection = $this->app->getDBConnection();
+        }
+    }
+
     /**
      * loadModel description
      *
@@ -19,7 +30,7 @@ class Controller
     public function loadModel($name)
     {
         require APP_DIR . MODEL_FOLDER . DIRECTORY_SEPARATOR . $name . '.php';
-        return new $name;
+        return new $name($this->DBConnection);
     }
 
     /**

@@ -7,19 +7,21 @@
  */
 class ExampleModel extends Model
 {
+    public function __construct(DBConnection $DBConnection)
+    {
+        parent::__construct($DBConnection);
+    }
+
     /**
      * getSomething description
-     *
-     * @param $id
      *
      * @return array
      *
      * @author Dinanath Thakur <kumardina023@gmail.com>
      */
-    public function getSomething($id)
+    public function getSomething()
     {
-        $id = $this->escapeString($id);
-        $result = $this->query('SELECT * FROM something WHERE id="' . $id . '"');
+        $result = $this->query('SELECT * FROM user_management_mapping LIMIT 10');
         return $result;
     }
 }

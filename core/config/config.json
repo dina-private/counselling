@@ -12,6 +12,10 @@
     "ASSET_FOLDER": "assets",
     "DEFAULT_ACTION": "index",
     "DEFAULT_CONTROLLER": "MainController",
-    "ERROR_CONTROLLER": "ErrorController"
+    "ERROR_CONTROLLER": "ErrorController",
+    "MYSQL_HOST": "localhost",
+    "MYSQL_DB": "mapping",
+    "MYSQL_USERNAME": "root",
+    "MYSQL_PASSWORD": ""
   }
 }

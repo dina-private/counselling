@@ -7,12 +7,33 @@
  */
 class App
 {
+    /**
+     * @var DBConnection|null
+     */
+    private $DBConnection = null;
+
+    /**
+     * App constructor.
+     */
     public function __construct()
     {
+        $this->DBConnection = new DBConnection();
     }
 
     /**
-     * runApp description
+     * getDBConnection description
+     *
+     * @return DBConnection|null
+     *
+     * @author Dinanath Thakur <kumardina023@gmail.com>
+     */
+    public function getDBConnection()
+    {
+        return $this->DBConnection;
+    }
+
+    /**
+     * start description
      *
      *
      * @author Dinanath Thakur <kumardina023@gmail.com>
@@ -61,8 +82,7 @@ class App
         }
 
         // Create object and call method
-        $obj = new $controller;
+        $obj = new $controller($this);
         die(call_user_func_array([$obj, $action], array_slice($segments, 2)));
     }
-
 }
