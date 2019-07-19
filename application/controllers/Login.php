@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Class MainController
+ * Class Login
  *
  * @author Dinanath Thakur <kumardina023@gmail.com>
  */
-class MainController extends Controller
+class Login extends Controller
 {
     /**
-     * MainController constructor.
+     * Login constructor.
      *
      * @param App $app
      */
@@ -24,8 +24,7 @@ class MainController extends Controller
      */
     public function index()
     {
-        $template = $this->loadView('index');
-        $template->sets(['firstName' => 'Dinanath', 'lastName' => 'Thakur']);
+        $template = $this->loadView('login');
         $template->render();
     }
 }
