@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class Core
+ * Class App
  *
  * @author Dinanath Thakur <kumardina023@gmail.com>
  */
@@ -81,8 +81,12 @@ class App
             $action = 'index';
         }
 
-        // Create object and call method
-        $obj = new $controller($this);
-        die(call_user_func_array([$obj, $action], array_slice($segments, 2)));
+        /**
+         * @var Controller $controllerOBJ Create object and call method
+         */
+        $controllerOBJ = new $controller();
+        $controllerOBJ->setApp($this)->initialize();
+        
+        die(call_user_func_array([$controllerOBJ, $action], array_slice($segments, 2)));
     }
 }

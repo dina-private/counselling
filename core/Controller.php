@@ -7,12 +7,38 @@
  */
 class Controller
 {
+    /**
+     * @var App|null
+     */
     private $app = null;
+    /**
+     * @var DBConnection|null
+     */
     private $DBConnection = null;
 
-    public function __construct(App $app = null)
+    /**
+     * setApp description
+     *
+     * @param $app
+     *
+     * @return $this
+     *
+     * @author Dinanath Thakur <kumardina023@gmail.com>
+     */
+    public function setApp($app)
     {
         $this->app = $app;
+        return $this;
+    }
+
+    /**
+     * initialize description
+     *
+     *
+     * @author Dinanath Thakur <kumardina023@gmail.com>
+     */
+    public function initialize()
+    {
         if ($this->app) {
             $this->DBConnection = $this->app->getDBConnection();
         }

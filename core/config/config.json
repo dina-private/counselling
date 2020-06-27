@@ -5,7 +5,7 @@
     "TIME_FORMAT": "H:i:s",
     "BASE_URL": "/",
     "CONTROLLER_FOLDER": "controllers",
-    "VIEW_FOLDER": "views",
+    "VIEW_FOLDER": "application/views",
     "HELPER_FOLDER": "helpers",
     "MODEL_FOLDER": "models",
     "PLUGIN_FOLDER": "plugins",
