@@ -14,6 +14,11 @@ class Login extends Controller
      */
     public function index()
     {
-        $this->loadView('login')->render();
+
+        if (!empty($_POST)) {
+            
+        } else {
+            $this->loadView('login')->render();
+        }
     }
 }
