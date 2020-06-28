@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Class MainController
+ * Class Dashboard
  *
  * @author Dinanath Thakur <kumardina023@gmail.com>
  */
-class MainController extends Controller
+class Dashboard extends Controller
 {
     /**
      * index description
@@ -14,8 +14,7 @@ class MainController extends Controller
      */
     public function index()
     {
-        $this->loadView('index')
-            ->noHeader()->noFooter()
+        $this->loadView('dashboard')
             ->setPageData(['firstName' => 'Dinanath', 'lastName' => 'Thakur'])
             ->render();
     }

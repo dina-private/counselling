@@ -5,23 +5,18 @@
  *
  * @author Dinanath Thakur <kumardina023@gmail.com>
  */
-class ExampleModel extends Model
+class User extends Model
 {
+    public $tableName = 'users';
+
     public function __construct(DBConnection $DBConnection)
     {
         parent::__construct($DBConnection);
     }
 
-    /**
-     * getSomething description
-     *
-     * @return array
-     *
-     * @author Dinanath Thakur <kumardina023@gmail.com>
-     */
-    public function getSomething()
+    public function checkUserForLogin($userName, $password)
     {
-        $result = $this->query('SELECT * FROM user_management_mapping LIMIT 10');
-        return $result;
+        $password = md5($password);
+        return $this->query('SELECT * FROM ' . $this->tableName . ' WHERE username ="' . $userName . '" AND password="' . $password . '" LIMIT 1');
     }
 }

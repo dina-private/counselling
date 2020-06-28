@@ -10,16 +10,17 @@
     <title><?php echo APP_NAME; ?></title>
 
     <!-- Bootstrap -->
-    <link href="<?php echo ASSET_FOLDER; ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?php echo ASSET_FOLDER; ?>vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="<?php echo ASSET_FOLDER; ?>vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="assets/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="<?php echo ASSET_FOLDER; ?>vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendors/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo ASSET_FOLDER; ?>/build/css/custom.min.css" rel="stylesheet">
+    <link href="assets//build/css/custom.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 </head>
 
 <body class="login">
@@ -48,5 +49,18 @@
         </div>
     </div>
 </div>
+<script src="assets/vendors/jquery/dist/jquery.min.js"></script>
+<script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https:/cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="assets/js/custom.js"></script>
+
+<script>
+    <?php
+    if (!empty($__errorMSG)) {
+        echo 'toastr["error"]("' . $__errorMSG . '");';
+    }
+    ?>
+
+</script>
 </body>
 </html>
